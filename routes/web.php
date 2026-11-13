@@ -34,7 +34,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/step4', 'step4')->name('step4');
     Route::get('/airports', 'airport')->name('airports');
     Route::get('/capacity-luggage', 'capacityLuggage')->name('luggage.capacity');
-    Route::get('about/', 'about')->name('about');
+    Route::get('/about', 'about')->name('about');
     Route::get('/taxi-with-child-car-seats', 'childSeat')->name('child.seat');
     Route::get('/pickup-location-12', 'pickupLocation')->name('pickup.location');
     Route::get('/boston-taxi-reservation', 'reservation')->name('reservation');
@@ -47,7 +47,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/terms&conditions', 'termConditions')->name('term.conditions');
     Route::get('/payment-policy', 'paymentPolicy')->name('payment.policy');
     Route::get('/services', 'areService')->name('area.service');
-    Route::get('/setting', 'setting')->name('setting');
+    // Route::get('/setting', 'setting')->name('setting');
     Route::post('/book-confirm', 'confirmBooking')->name('book.confirm');
 });
 Route::get('/{slug}', [RouteController::class, 'index'])->name('dynamic.route');

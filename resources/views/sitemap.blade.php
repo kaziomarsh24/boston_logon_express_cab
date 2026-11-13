@@ -5,7 +5,7 @@
     @foreach ($staticRouteNames as $routeName => $priority)
         @if (Route::has($routeName))
         <url>
-            <loc>{{ route($routeName) .'/' }}</loc>
+            <loc>{{ route($routeName) }}</loc>
             <lastmod>{{ now()->tz('America/New_York')->toAtomString() }}</lastmod>
             <priority>{{ $priority }}</priority>
         </url>
@@ -13,7 +13,7 @@
     @endforeach
     @foreach ($cities as $city)
     <url>
-        <loc>{{ route('dynamic.route', $city->url ?? $city->slug) .'/' }}</loc>
+        <loc>{{ route('dynamic.route', $city->url ?? $city->slug) }}</loc>
         <lastmod>{{ $city->updated_at ? $city->updated_at->tz('America/New_York')->toAtomString() : now()->toAtomString() }}</lastmod>
         <priority>0.85</priority>
     </url>
@@ -21,7 +21,7 @@
 
     @foreach ($blogs as $blog)
     <url>
-        <loc>{{ route('dynamic.route', $blog->slug) .'/' }}</loc>
+        <loc>{{ route('dynamic.route', $blog->slug) }}</loc>
         <lastmod>{{ $blog->updated_at ? $blog->updated_at->tz('America/New_York')->toAtomString() : now()->toAtomString() }}</lastmod>
         <priority>0.75</priority>
     </url>

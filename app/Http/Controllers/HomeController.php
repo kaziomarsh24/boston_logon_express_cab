@@ -387,6 +387,10 @@ class HomeController extends Controller
     {
         return view("frontend.layouts.pages.paymentPolicy");
     }
+    public function privacyPolicy(Request $request)
+    {
+        return app(ServiceController::class)->serviceDetails('privacy-policy');
+    }
      public function termConditions(Request $request)
     {
         return view("frontend.layouts.pages.termConditions");
